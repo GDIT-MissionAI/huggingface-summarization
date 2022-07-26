@@ -25,7 +25,7 @@ def lambda_handler(event, context):
     
     #Get Results
     if sContext != "": #Ensure values are populated
-        sResult = genSummary(text, iMin, iMax)
+        sResult = genSummary(sContext, iMin, iMax)
         print(sResult)
         
     #event_dict = json.loads(event) #if "key" in "dict"
