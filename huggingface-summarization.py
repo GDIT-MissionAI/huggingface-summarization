@@ -6,7 +6,7 @@ import botocore
 from base64 import b64encode
 
 #load pipeline
-nlp = pipeline("summarization")
+summarizer = pipeline("summarization")
 
 #load clients
 s3Client = boto3.client('s3')
