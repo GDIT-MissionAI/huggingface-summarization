@@ -36,8 +36,18 @@ def lambda_handler(event, context):
     
     return {
         'statusCode': 200,
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Credentials': true
+        },
         'body': sResult #return answers to caller
     }
+
+                statusCode:200,
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Credentials': true
+                },
 
 #grab s3 object with text content
 def getContent(srcBucket, srcKey):
