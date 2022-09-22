@@ -50,7 +50,7 @@ def getContent(srcBucket, srcKey):
   
 #Generate the answers to the question.
 def genSummary(text, iMin, iMax):
-    summary = summarizer(text, iMax, iMin)
+    summary = summarizer(text, iMin, iMax)
     print(summary[0].get('summary_text'))
     return summary[0].get('summary_text')
 #    for i in range(min(len(df), topn)):
