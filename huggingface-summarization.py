@@ -16,8 +16,6 @@ sResult = ""
 
 def lambda_handler(event, context):
     sContext = event.get("Context")
-    iMin = event.get("Min")
-    iMax = event.get("Max")
     if (sContext == ""):
       sBucket = event.get("Bucket")
       sKey = event.get("Key")
@@ -25,7 +23,7 @@ def lambda_handler(event, context):
     
     #Get Results
     if sContext != "": #Ensure values are populated
-        sResult = genSummary(sContext, iMin, iMax)
+        sResult = genSummary(sContext)
         print(sResult)
         
     #event_dict = json.loads(event) #if "key" in "dict"
@@ -49,8 +47,9 @@ def getContent(srcBucket, srcKey):
     return response
   
 #Generate the answers to the question.
-def genSummary(text, iMin, iMax):
-    summary = summarizer(text, iMin, iMax)
+def genSummary(text):
+    #summary = summarizer(text, iMin, iMax)
+    summary = summarizer(text)
     print(summary[0].get('summary_text'))
     return summary[0].get('summary_text')
 #    for i in range(min(len(df), topn)):
