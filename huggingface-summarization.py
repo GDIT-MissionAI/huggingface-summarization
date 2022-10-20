@@ -15,6 +15,7 @@ s3Client = boto3.client('s3')
 sResult = ""
 
 def lambda_handler(event, context):
+    print(event)
     sContext = event.get("Context")
     if (sContext == ""):
       sBucket = event.get("Bucket")
