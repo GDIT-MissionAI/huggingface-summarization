@@ -1,3 +1,5 @@
+import os
+os.environ['TRANSFORMERS_CACHE'] = '/tmp'
 from transformers import pipeline
 import pandas as pd
 import json
