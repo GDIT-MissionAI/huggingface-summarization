@@ -10,7 +10,7 @@ from base64 import b64encode
 #load pipeline
 #summarizer = pipeline("summarization")
 #summarizer = pipeline(model = "sshleifer/distilbart-cnn-12-6", tokenizer ="sshleifer/distilbart-cnn-12-6")
-summarizer = pipeline(model = "models/distilbart-cnn-12-6", tokenizer ="models/distilbart-cnn-12-6")
+summarizer = pipeline(task = "summarization", model = "models/distilbart-cnn-12-6", tokenizer ="models/distilbart-cnn-12-6")
 
 
 #load clients
