@@ -1,3 +1,5 @@
+import os
+os.environ['TRANSFORMERS_CACHE'] = '/tmp'
 from transformers import pipeline
 import pandas as pd
 import json
@@ -6,7 +8,9 @@ import botocore
 from base64 import b64encode
 
 #load pipeline
-summarizer = pipeline("summarization")
+#summarizer = pipeline("summarization")
+summarizer = pipeline.from_pretrained('sshleifer')
+
 
 #load clients
 s3Client = boto3.client('s3')
